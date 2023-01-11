@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                font-family:monospace;
+            }
+            #labelplot{
+                display:grid;
+                border-bottom:solid;
+                border-width:20px;
+                border-radius:50px;
+                border-color:rgb(80, 80, 80);
+                background-color: rgb(119, 119, 119);
+                margin:1em 7em;
+                margin-bottom:0;
+                box-shadow: 70px 70px 50px rgba(37, 37, 37,0.5);
+                
+            }
+            #labeltop{
+                text-align:right;
+                font-size:70px;
+                color:transparent;
+                padding:1em 3em;
+                margin:0 0;
+                
+            }
+            #labelbott{
+                text-align:right;
+                font-size:100px;
+                color:white;
+                padding:0 2em;
+                margin:0 0;
+                margin-bottom:1em;
+            }
+            
+            .nums{
+                align-items: center;
+                display:grid;
+                border-bottom:solid;
+                border-width:20px;
+                border-radius:50px;
+                border-color:rgb(80, 80, 80);
+                grid-template-columns: repeat(4,1fr);
+                text-align: center;
+                padding:auto auto;
+                font-size:100px;
+                margin:0 1em;
+                padding:1em 1em;
+                background-color: rgb(119, 119, 119);
+                box-shadow: 70px 70px 50px rgba(37, 37, 37,0.5);
+                
+            }
+            #b{
+                background-color: white;
+                cursor:pointer;
+                text-align: center;
+                border-style:solid;
+                border-color:transparent;
+                border-radius: 150px;
+                font-size:100px;
+                padding:0.2em 1em;
+                margin:50px 10px;
+                transition: 0.3s;
+            }
+            #b:hover{
+                transform:scale(110%);
+                background-color:cadetblue;
+                box-shadow: 0 20px 50px rgba(37, 37, 37,0.5);
+
+            }
+            .calc{
+                display:grid;
+                justify-content: center;
+                align-items: center;
+                margin-top:4em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calc">
+            <div id="labelplot">
+                <h1 id="labeltop">base</h1>
+                <h1 id="labelbott">Enter Numbers.</h1>
+            </div>
+            <div class="nums">
+                <button onclick="reciprocal()" id="b">R</button>
+                <button onclick="squared()" id="b">x<sup>2</sup></button>
+                <button onclick="reciprocal()" id="b">L</button>
+                <button onclick="addSign('/')" id="b">/</button>
+                <button onclick="addNums(1)" id="b">1</button>
+                <button onclick="addNums(2)" id="b">2</button>
+                <button onclick="addNums(3)" id="b">3</button>
+                <button onclick="addSign('*')" id="b">x</button>
+                <button onclick="addNums(4)" id="b">4</button>
+                <button onclick="addNums(5)" id="b">5</button>
+                <button onclick="addNums(6)" id="b">6</button>
+                <button onclick="addSign('-')" id="b">-</button>
+                <button onclick="addNums(7)" id="b">7</button>
+                <button onclick="addNums(8)" id="b">8</button>
+                <button onclick="addNums(9)" id="b">9</button>
+                <button onclick="addSign('+')" id="b">+</button>
+                <button onclick="resetNums()" id="b">C</button>
+                <button onclick="addNums(0)" id="b">0</button>
+                <button onclick="addNums('.')" id="b">.</button>
+                <button onclick="compute()" id="b">=</button>
+                
+            </div>
+        </div>
+        <script src="calcBackend.js"></script>
+    </body>
+</html>
